@@ -10,6 +10,7 @@ import {
   StudentSkill,
   CustomUserProject
 } from '../types';
+const API_BASE_URL = "https://connected-u2rw.onrender.com";
 import {
   CURRENT_USER
 } from '../data/mockData';
@@ -258,7 +259,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 ) => {
   try {
     const response = await fetch(
-      'https://YOUR-RENDER-URL.onrender.com/api/doubts',
+      'https://connected-u2rw.onrender.com/api/ai/doubt',
       {
         method: 'POST',
         headers: {
@@ -339,7 +340,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 const fetchClusters = async () => {
   try {
     const response = await fetch(
-      'https://YOUR-RENDER-URL.onrender.com/api/doubts'
+      'https://connected-u2rw.onrender.com/api/cluster-doubts'
     );
 
     if (!response.ok) {
@@ -387,7 +388,7 @@ const fetchClusters = async () => {
 
   try {
     const response = await fetch(
-  'https://YOUR-RENDER-URL.onrender.com/api/doubts'
+  'https://connected-u2rw.onrender.com/api/cluster-doubts'
 );
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -504,7 +505,7 @@ const fetchClusters = async () => {
   const upvoteDoubt = async (doubtId: string) => {
   try {
     const response = await fetch(
-      `https://YOUR-RENDER-URL.onrender.com/api/doubts`,
+      `https://connected-u2rw.onrender.com/api/doubts/${doubtId}/upvote?user_id=${encodeURIComponent(user.id)}`,
       {
         method: 'POST',
       }
