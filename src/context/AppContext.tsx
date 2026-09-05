@@ -258,7 +258,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 ) => {
   try {
     const response = await fetch(
-      'http://localhost:8000/api/ai/doubt',
+      'https://YOUR-RENDER-URL.onrender.com/api/doubts',
       {
         method: 'POST',
         headers: {
@@ -339,7 +339,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 const fetchClusters = async () => {
   try {
     const response = await fetch(
-      'http://localhost:8000/api/cluster-doubts'
+      'https://YOUR-RENDER-URL.onrender.com/api/doubts'
     );
 
     if (!response.ok) {
@@ -387,7 +387,7 @@ const fetchClusters = async () => {
 
   try {
     const response = await fetch(
-  'http://localhost:8000/api/cluster-doubts'
+  'https://YOUR-RENDER-URL.onrender.com/api/doubts'
 );
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -504,7 +504,7 @@ const fetchClusters = async () => {
   const upvoteDoubt = async (doubtId: string) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/doubts/${doubtId}/upvote?user_id=${encodeURIComponent(user.id)}`,
+      `https://YOUR-RENDER-URL.onrender.com/api/doubts`,
       {
         method: 'POST',
       }
