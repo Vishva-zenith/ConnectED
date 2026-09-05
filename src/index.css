@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 min-h-screen font-sans antialiased;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism & Card helpers */
+.glass-panel {
+  @apply bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl shadow-sm;
+}
+
+.glass-card {
+  @apply bg-white border border-slate-200/90 rounded-2xl shadow-sm hover:shadow-md hover:border-blue-400/80 transition-all duration-200;
+}
+
+button, a, .glass-card, .glass-panel {
+  @apply transition-transform duration-200 ease-out;
+}
+
+button:hover, a:hover {
+  transform: translateY(-1px);
+}
+
+.glass-card:hover, .glass-panel:hover {
+  transform: translateY(-2px);
+}
+
+.dark body,
+.dark .bg-slate-50 {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark .bg-white,
+.dark .bg-white\/95,
+.dark .bg-white\/90 {
+  background-color: #1e293b;
+}
+
+.dark .bg-slate-100,
+.dark .bg-slate-50\/80 {
+  background-color: #263449;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f8fafc;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #cbd5e1;
+}
+
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #334155;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #172033;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+/* Keep text readable when dark utility backgrounds are used with legacy text classes. */
+.bg-slate-800.text-slate-600,
+.bg-slate-800.text-slate-700,
+.bg-slate-800.text-slate-800 {
+  color: #f8fafc;
+}
+
+.bg-slate-800.text-blue-600:hover,
+.bg-slate-800.text-slate-700:hover {
+  color: #ffffff;
+}
